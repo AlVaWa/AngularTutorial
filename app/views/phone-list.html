@@ -1,0 +1,28 @@
+<div class="container" style="margin-top: 75px">
+    <div class="jumbotron">
+
+                <!--Sidebar content-->
+        <h1>{{title}}</h1>
+        <p>Search key: {{query}}</p>
+        <p>Sorted by: {{orderProp}}</p>
+
+        <div class="input-group input-group-sm">
+            <span class="input-group-addon">Search:</span>
+            <input ng-model="query" type="text" class="form-control" placeholder="Search mobiles">
+        </div>
+
+        <select ng-model="orderProp" class="form-control">
+            <option value="name">Alphabetical</option>
+            <option value="age">Newest</option>
+        </select>
+
+        <ul class="phones">
+            <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail phone-listings">
+                <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+                <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+                <p>{{phone.snippet}}</p>
+            </li>
+        </ul>
+        <p>Total number of phones: {{phones.length}}</p>
+    </div>
+</div>

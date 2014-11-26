@@ -1,0 +1,18 @@
+<div class="container" style="margin-top: 75px">
+    <div class="jumbotron">
+
+        <h1>Bootstrapping: </h1>
+        <div>1 + 2 = {{ 1 + 2 }}</div>
+
+        <h1>Filters: </h1>
+        <div>{{ "lower cap string" | uppercase }}</div>
+        <div>{{ {foo: "bar", baz: 23} | json }}</div>
+        <div>{{ 1304375948024 | date }}</div>
+        <div>{{ 1304375948024 | date:"MM/dd/yyyy @ h:mma" }}</div>
+
+        <h1>Event:</h1>
+        <button ng-click="hello('Elmo')">Hello</button>
+
+
+    </div>
+</div>
